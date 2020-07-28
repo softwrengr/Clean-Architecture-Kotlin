@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="small_text">12sp</dimen>
+    <dimen name="default_text">14sp</dimen>
+    <dimen name="large_size">18sp</dimen>
+    <dimen name="title">20sp</dimen>
+    <dimen name="big_title">22sp</dimen>
+    <dimen name="high_margin">24dp</dimen>
+    <dimen name="large_margin">20dp</dimen>
+    <dimen name="standard_margin">16dp</dimen>
+    <dimen name="medium_margin">8dp</dimen>
+    <dimen name="small_margin">4dp</dimen>
+    <dimen name="large_button">70dp</dimen>
+    <dimen name="view_size">50dp</dimen>
+</resources>
