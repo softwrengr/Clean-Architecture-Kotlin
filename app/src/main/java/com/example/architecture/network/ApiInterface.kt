@@ -3,6 +3,7 @@ package com.example.architecture.network
 import com.example.architecture.models.LoginResponse
 import okhttp3.ResponseBody
 import retrofit2.Call
+import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.http.Field
@@ -13,10 +14,11 @@ interface ApiInterface{
 
     @FormUrlEncoded
     @POST("signup/login")
-    fun userLogin(
+    suspend fun userLogin(
       @Field("email") email:String,
       @Field("password") passwrod:String
-    ) : Call<LoginResponse>
+    ) : Response<LoginResponse>
+
 
     companion object{
         operator fun invoke() : ApiInterface {

@@ -30,17 +30,16 @@ class LoginActivity : AppCompatActivity(), AuthListener {
        progess.show()
     }
 
-    override fun onSuccess(loginResponse: LiveData<LoginResponse>) {
-        loginResponse.observe(this, Observer {
-            progess.hide()
-            if(it.success){
-                toast(it.message)
-            }
-            else{
-                toast(it.message)
-            }
-        })
+    override fun onSuccess(loginResponse: LoginResponse?) {
+        progess.hide()
+        if(loginResponse!!.success){
+            toast(loginResponse.message)
+        }
+        else{
+            toast(loginResponse.message)
+        }
     }
+
 
     override fun onFailure(message: String) {
         progess.hide()
