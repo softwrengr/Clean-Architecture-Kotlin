@@ -1,6 +1,7 @@
 package com.example.architecture.network
 
 import com.example.architecture.models.LoginResponse
+import okhttp3.OkHttpClient
 import okhttp3.ResponseBody
 import retrofit2.Call
 import retrofit2.Response
@@ -21,9 +22,16 @@ interface ApiInterface{
 
 
     companion object{
-        operator fun invoke() : ApiInterface {
+
+        operator fun invoke(networkConnectionInterceptor: NetworkConnectionInterceptor) : ApiInterface {
+
+            val okHttpClient = OkHttpClient.Builder()
+                .addInterceptor(networkConnectionInterceptor)
+                .build()
+
             return Retrofit.Builder()
                 .baseUrl("http://3.135.160.209/")
+                .client(okHttpClient)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build()
                 .create(ApiInterface::class.java)
