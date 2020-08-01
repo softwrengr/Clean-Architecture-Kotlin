@@ -3,7 +3,6 @@
 
 
     <data>
-
         <variable
             name="viewmodel"
             type="com.example.architecture.ui.LoginViewModel" />

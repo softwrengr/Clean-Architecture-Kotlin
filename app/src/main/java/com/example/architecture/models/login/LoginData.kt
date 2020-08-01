@@ -1,4 +1,4 @@
-package com.example.architecture.models
+package com.example.architecture.models.login
 
 data class LoginData(
     var id:String?,
